@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+      "target": "ES6",                           // Target modern JavaScript
+      "module": "CommonJS",                      // CommonJS modules for Node.js
+      "outDir": "./dist",                        // Compiled JS files will go into the "dist" folder
+      "rootDir": "./src",                        // Root directory of your source TypeScript files
+      "strict": true,                            // Enable strict type-checking
+      "esModuleInterop": true,                   // Allow default import of CommonJS modules
+      "skipLibCheck": true,                      // Skip checking declaration files (improves build speed)
+      "forceConsistentCasingInFileNames": true,  // Ensure consistent file name casing
+      "resolveJsonModule": true,                 // Allow importing JSON modules
+      "moduleResolution": "node",                // Resolve modules like Node.js
+      "declaration": true,                       // Generate declaration files for type safety
+      "isolatedModules": true,                   // Ensure each file can be treated as an isolated module
+     // "noUnusedLocals": true,                    // Report unused locals
+      //"noUnusedParameters": true,                // Report unused parameters
+      "noImplicitAny": true  ,                    // Prevent using `any` implicitly
+      "experimentalDecorators": true
+    },
+    "include": [
+      "src/**/*.ts"  // Include all TypeScript files under "src" folder
+    ],
+    "exclude": [
+      "node_modules",                           // Exclude node_modules from compilation
+      "dist"                                     // Exclude the output directory
+    ]
+  }
+  
