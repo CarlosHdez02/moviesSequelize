@@ -14,7 +14,7 @@ export class MovieController {
       const createMovieDto: CreateMovieDto = req.body;
       const existingMovie = await this.movieService.findByName(createMovieDto.movieName)
       if (existingMovie) {
-         res.status(409).json({ message: 'Category with this name already exists' });
+         res.status(409).json({ message: 'Movie with this name already exists' });
          return;
       }
       
