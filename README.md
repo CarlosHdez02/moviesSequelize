@@ -16,17 +16,13 @@ Project Setup
 Clone the Repository
 First, clone the repository to your local machine:
 
-bash
-Copy
-Edit
+
 git clone https://github.com/CarlosHdez02/moviesSequelize.git
 cd moviesSequelize
 Install Dependencies
 Install the required dependencies using npm:
 
-bash
-Copy
-Edit
+
 npm install
 This will install both production and development dependencies.
 
@@ -52,11 +48,12 @@ Fetch a movie by its id.
 Response: A single movie object.
 POST /movies
 
+Fetch with filetrs
+Response:A list of filtered movies
+http://localhost:3000/api/movies?category=Action&page=1&limit=1
 Create a new movie.
 Body:
 json
-Copy
-Edit
 {
   "movieName": "Inception",
   "description": "A mind-bending thriller",
@@ -71,40 +68,41 @@ Response: The updated movie object.
 DELETE /movies/:id
 
 Delete a movie by its id.
-Response: Success message if deleted.
+Response: 204 status with nothing
+
+Fetching categories
+GET http://localhost:3000/api/categories
+Response: A list of categories
+
+POST http://localhost:3000/api/categories
+body: {
+      "name":"comedy"
+}
+
+PUT http://localhost:3000/api/categories/:id
+body:{
+    "name":"action"
+}
+Response: The updated category
+
+DELETE http://localhost:3000/api/categories/:id
+
+Response: 204 status with nothing
+
 Running the Project
 Local Development
 To run the project locally in development mode, use the following command:
 
-bash
-Copy
-Edit
+
 npm run dev
 This will start the server and watch for changes in the src folder.
 
-Production Build
-To create a production build and run the server:
 
-Compile TypeScript files:
-
-bash
-Copy
-Edit
-npm run build
-Start the server with:
-
-bash
-Copy
-Edit
-npm start
 The production server will run on the configured port (default: 3000).
 
 Environment Variables
 You need to configure environment variables to connect to your database. Create a .env file at the root of your project and add the following:
 
-ini
-Copy
-Edit
 DB_USER=your_db_user
 DB_PASS=your_db_password
 DB_NAME=movies_database
@@ -118,13 +116,7 @@ Make sure you have PostgreSQL installed and running on your local machine or rem
 
 Run the migrations to create the necessary database tables:
 
-bash
-Copy
-Edit
 npx sequelize-cli db:migrate
 (Optional) To seed the database with some sample data:
 
-bash
-Copy
-Edit
 npx sequelize-cli db:seed:all
