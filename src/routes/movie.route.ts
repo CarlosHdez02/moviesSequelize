@@ -1,4 +1,3 @@
-// routes/movie.route.ts
 import express, { Router } from 'express';
 import { MovieController } from '../controller/movie.controller';
 import { validateRequest } from '../middleware/validate_request';
