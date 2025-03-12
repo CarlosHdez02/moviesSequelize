@@ -1,4 +1,3 @@
-// app.ts or app.js
 import express, { NextFunction, Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import movieRoute from './routes/movie.route';
@@ -44,9 +43,6 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   });
 });
 
-// Start server
-/*app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});*/
+
 
 export default app;

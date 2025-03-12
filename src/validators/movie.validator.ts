@@ -1,8 +1,8 @@
-// validators/movie.validator.ts
+
 import Joi from 'joi';
 import { MovieGenre } from '../interfaces/movie.interface';
 
-// Validate that the genre is one of the allowed values
+
 const genreValues = ['Action', 'Comedy', 'Horror', 'Thriller', 'Romance'];
 
 export const createMovieSchema = Joi.object({
@@ -18,4 +18,4 @@ export const updateMovieSchema = Joi.object({
   description: Joi.string().min(10).max(1000),
   genre: Joi.string().valid(...genreValues),
   category: Joi.array().items(Joi.string()).min(1)
-}).min(1); // At least one field must be present
+}).min(1); 

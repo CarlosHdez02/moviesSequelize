@@ -1,4 +1,4 @@
-// interfaces/movie.interface.ts
+
 
 export enum MovieGenre {
     Action = 'Action',

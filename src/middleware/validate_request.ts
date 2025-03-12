@@ -19,10 +19,10 @@ export const validateRequest = (schema: Schema) => {
         message: 'Validation failed',
         errors: validationErrors
       });
-      return; // Return here to stop execution
+      return; 
     }
 
-    // Update req.body with the validated and sanitized data
+
     req.body = value;
     next();
   };

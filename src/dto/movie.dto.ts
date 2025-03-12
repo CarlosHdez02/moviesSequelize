@@ -5,7 +5,7 @@ export class CreateMovieDto {
   movieName!: string;
   description!: string;
   genre!: MovieGenre;
-  category!: string[]; // List of category names or IDs
+  category!: string[]; 
 }
 
 export class UpdateMovieDto {

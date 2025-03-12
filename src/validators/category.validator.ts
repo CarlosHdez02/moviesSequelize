@@ -7,4 +7,4 @@ export const createCategorySchema = Joi.object({
 
 export const updateCategorySchema = Joi.object({
   name: Joi.string().min(1).max(50),
-}).min(1); // At least one field must be presen
+}).min(1); 

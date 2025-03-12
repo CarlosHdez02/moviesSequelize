@@ -9,7 +9,7 @@ dotenv.config();
 // Database configuration
 const dbName = process.env.DB_NAME || 'lili_db';
 const dbUser = process.env.DB_USER || 'postgres';
-const dbPassword = process.env.DB_PASSWORD || 'mypassword';
+const dbPassword = process.env.DB_PASSWORD ;
 const dbHost = process.env.DB_HOST || 'localhost';
 const dbPort = process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 5432;
 const dialect = 'postgres';
@@ -46,7 +46,7 @@ const sequelizeOptions: SequelizeOptions = {
 
 const sequelize = new Sequelize(sequelizeOptions);
 
-// Function to initialize database connection
+
 export const initDatabase = async (): Promise<void> => {
   try {
     await sequelize.authenticate();
